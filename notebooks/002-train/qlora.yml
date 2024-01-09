@@ -12,14 +12,13 @@ datasets:
     dset_type: json
     type: alpaca
 dataset_prepared_path: last_run_prepared
-val_set_size: 0.05
-eval_sample_packing: False
+val_set_size: 0.1
 output_dir: ./qlora-out
 
 adapter: qlora
 lora_model_dir:
 
-sequence_len: 1024
+sequence_len: 8192
 sample_packing: true
 pad_to_sequence_len: true
 
@@ -40,12 +39,12 @@ lora_target_modules:
 wandb_project: recipe-gantt
 wandb_entity: pocasrocas
 wandb_watch: 
-wandb_name: anaschistic_consultations
+wandb_name: wourali_calamitously
 wandb_log_model: false
 
 gradient_accumulation_steps: 4
 micro_batch_size: 2
-num_epochs: 1
+num_epochs: 10
 optimizer: adamw_bnb_8bit
 lr_scheduler: cosine
 learning_rate: 0.0002
