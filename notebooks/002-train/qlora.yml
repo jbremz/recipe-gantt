@@ -39,7 +39,7 @@ lora_target_modules:
 wandb_project: recipe-gantt
 wandb_entity: pocasrocas
 wandb_watch: 
-wandb_name: wourali_calamitously
+wandb_name: backspaces_promammalian
 wandb_log_model: false
 
 gradient_accumulation_steps: 4
