@@ -1,16 +1,11 @@
 # Recipe Gantt 🧑‍🍳
 
-The idea:
+Recipe Gantt uses an LM to automatically convert recipes like [this one](https://www.bbcgoodfood.com/recipes/next-level-banoffee-pie) 🍌 into gantt charts like the one below:
+![Next level banoffee pie](assets/next-level-banoffee-pie-gantt.png "Next level banoffee pie")
 
-- Take a typical recipe (one that you might find online) with standard Ingredients and Method sections
-- Use an LLM to convert it into a Gantt chart (in this case a table) with:
-  - the individual steps in the method as columns
-  - the individual ingredients as rows
-  - an ✓ in each cell corresponding to the steps where that ingredient is used
+The hope is to provide a simpler graphical way of viewing recipes (especially complicated multi-step ones) without having to move back and forth between the ingredients and the method inefficiently.
 
-The hope is this would provide a simpler graphical way of viewing recipes (especially complicated multi-step ones) without having to move back and forth between the ingredients and the method inefficiently.
-
-It's very overengineered.
+It's very over-engineered.
 
 ## Installation
 

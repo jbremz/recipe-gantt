@@ -4,3 +4,4 @@ data/
 *.pyc
 *.egg-info
 *.gguf
+recipe-gantt.tsv

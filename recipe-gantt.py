@@ -160,7 +160,7 @@ def read_tsv(output):
     return pd.read_csv(StringIO(output), sep="\t")
 
 
-def plot_gantt(df, figsize=(1000, 2000)):
+def plot_gantt(df, figsize=(1000, 1800)):
     """
     Plot a Gantt chart using the provided DataFrame.
 
@@ -206,15 +206,17 @@ def main(
     url = input("🧑‍🍳 Please enter the recipe URL: ")
     logger.info("Downloading recipe ⬇️")
     prompt = get_prompt(url)
+
     logger.info("Generating gantt chart...")
     output = llm(prompt, max_tokens=4096, echo=False)
     output = output["choices"][0]["text"]
+
     with open(output_path, "w") as file:
         file.write(output)
     logger.info(f"Written recipe gantt chart to {output_path}")
 
     if display:
-        logger.info("Opening recipe gantt chart for display 🖥️")
+        logger.info("Opening gantt chart for display 🖥️")
         df = read_tsv(output)
         plot_gantt(df)
 
