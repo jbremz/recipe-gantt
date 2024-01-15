@@ -48,7 +48,7 @@ You can see the wandb training logs [here](https://wandb.ai/pocasrocas/recipe-ga
 
 The resulting model is hosted here: [pocasrocas/recipe-gantt-v0.1](https://huggingface.co/pocasrocas/recipe-gantt-v0.1). 
 
-## Areas for development
+## Areas for future development
 
 1. It's not pretty, but then frontend isn't really my thing... any PRs to give this a proper UI etc. are very welcome
 1. It surprised me how little data was required to produce a good-quality model. However, sometimes it produces corrupted TSV files or populates the cells inaccurately. The simplest answer would be to scale up the finetuning data from \~100s to e.g. 1000s of samples. This would be very straightforward to do but I didn't feel like spending more than I already had done (\~£20) on OpenAI credits...
