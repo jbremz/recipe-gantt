@@ -36,10 +36,14 @@ python recipe-gantt.py
 1. A custom GPT Assistant was written to generate the desired gantt charts as TSV files (albeit much more slowly and expensively) from simplified Ingredients, Method formatted recipes ([code](https://github.com/jbremz/recipe-gantt/blob/1c37b115b155a128e0765040197c5783b5a91ff3/notebooks/001-get-data/03-query-gpt4.ipynb)).  A publicly accessible GPT version of the same assistant is [here](https://chat.openai.com/g/g-VG5s6fStY-recipe-gantt).
 1. Did a small amount of manual tweaking of the outputs to improve data quality before I lost my mind and moved on ([code](https://github.com/jbremz/recipe-gantt/blob/1c37b115b155a128e0765040197c5783b5a91ff3/notebooks/001-get-data/04-check-results.ipynb)).
 
+You can find the dataset hosted here: [pocasrocas/recipe-gantt](https://huggingface.co/datasets/pocasrocas/recipe-gantt).
+
 ### Finetuning/implementation
 
 1. Used [axolotl](https://github.com/OpenAccess-AI-Collective/axolotl) finetune Mistral-7B-v0.1 on this dataset of a few hundred examples of (recipe input, gantt chart output) pairs. This model wouldn't need the tedious CoT prompting that I had to use with GPT4 and instead could map directly to the output, making it ~4x quicker. I could also host it locally which was better than paying for GPT4 credits ([code](https://github.com/jbremz/recipe-gantt/tree/002-train/notebooks/002-train)).
 1. Made use of [llama.cpp](https://github.com/ggerganov/llama.cpp) and [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) to compress the finetuned model and run it locally on my macbook at ~30tok/s
+
+The resulting model is hosted here: [recipe-gantt-v0.1](https://huggingface.co/pocasrocas/recipe-gantt-v0.1). 
 
 ## Areas for development
 
