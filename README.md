@@ -33,7 +33,7 @@ python recipe-gantt.py
 
 1. Used the [openrecipes](https://github.com/fictivekin/openrecipes) dataset to get a few hundred recipe URLs
 1. Used [recipe-scrapers](https://github.com/hhursev/recipe-scrapers) library to extract the ingredients and method steps when given a recipe URL ([code](https://github.com/jbremz/recipe-gantt/blob/1c37b115b155a128e0765040197c5783b5a91ff3/notebooks/001-get-data/02-save-recipes.ipynb)).
-1. A custom GPT Assistant was written to generate the desired gantt charts as TSV files (albeit much more slowly and expensively) from simplified Ingredients, Method formatted recipes ([code](https://github.com/jbremz/recipe-gantt/blob/1c37b115b155a128e0765040197c5783b5a91ff3/notebooks/001-get-data/03-query-gpt4.ipynb)).
+1. A custom GPT Assistant was written to generate the desired gantt charts as TSV files (albeit much more slowly and expensively) from simplified Ingredients, Method formatted recipes ([code](https://github.com/jbremz/recipe-gantt/blob/1c37b115b155a128e0765040197c5783b5a91ff3/notebooks/001-get-data/03-query-gpt4.ipynb)).  A publicly accessible GPT version of the same assistant is [here](https://chat.openai.com/g/g-VG5s6fStY-recipe-gantt).
 1. Did a small amount of manual tweaking of the outputs to improve data quality before I lost my mind and moved on ([code](https://github.com/jbremz/recipe-gantt/blob/1c37b115b155a128e0765040197c5783b5a91ff3/notebooks/001-get-data/04-check-results.ipynb)).
 
 ### Finetuning/implementation
