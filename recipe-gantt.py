@@ -194,7 +194,7 @@ def plot_gantt(df, figsize=(1000, 1800)):
 def main(
     output_path="recipe-gantt.tsv",
     display=True,
-    model_path="./models/merged_ggml-model-q4_0.gguf",
+    model_path="./models/recipe-gantt-v0.1-q4_0.gguf",
 ):
     logger.info("Loading model...")
     llm = Llama(
