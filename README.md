@@ -12,6 +12,7 @@ It's very over-engineered.
 ```bash
 conda env create -f env.yml 
 ```
+**NOTE:** I have only tested this on my 2021 Macbook Pro (with M1 Pro). There's every possibility that llama.cpp will behave differently for other systems.
 
 ## Usage
 
