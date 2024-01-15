@@ -15,7 +15,7 @@ conda env create -f env.yml
 
 ## Usage
 
-First activate the conda environment:
+First, activate the conda environment:
 
 ```bash
 conda activate recipe-gantt
@@ -50,7 +50,7 @@ The resulting model is hosted here: [pocasrocas/recipe-gantt-v0.1](https://huggi
 ## Areas for development
 
 1. It's not pretty, but then frontend isn't really my thing... any PRs to give this a proper UI etc. are very welcome
-1. It was surprising to me just how little data was required to produce a good quality model. However, sometimes it produces corrupted TSV files or populates the cells inaccurately. The simplest answer to this would be to scale up the finetuning data from \~100s to e.g. 1000s of samples. This would be very straightforward to do but I didn't feel like spending more than I already had done (\~£20) on OpenAI credits...
-1. There are potential more intelligent ways of constraining the model outputs to valid TSV 🤔
-1. My alpaca prompting strategy feels inefficient. Given this is a mono-task LM, each prompt is largely the same except from a different input appended to the end. Given enough finetuning data, the model should be able to learn the task without needing the same preamble every time. Perhaps one could start with a model finetuned on the whole prompt and then switch to removing it later. This should save on redundant computation and allow shorter context lengths.
+1. It surprised me how little data was required to produce a good-quality model. However, sometimes it produces corrupted TSV files or populates the cells inaccurately. The simplest answer would be to scale up the finetuning data from \~100s to e.g. 1000s of samples. This would be very straightforward to do but I didn't feel like spending more than I already had done (\~£20) on OpenAI credits...
+1. There are potentially more intelligent ways of constraining the model outputs to valid TSV 🤔
+1. My alpaca prompting strategy feels inefficient. Given this is a mono-task LM, each prompt is largely the same except for a different input appended to the end. Given enough finetuning data, the model should be able to learn the task without needing the same preamble every time. Perhaps one could start with a model finetuned on the whole prompt and then switch to removing it later. This should save on redundant computation and allow shorter context lengths.
 1. The recipe-scrapers library sometimes fails and unfortunately doesn't support all of the recipe websites that I have tried (you can find a list of supported sites [here](https://github.com/hhursev/recipe-scrapers?tab=readme-ov-file#scrapers-available-for)). This could make things frustrating for practical use but I'm not sure if I'm motivated enough to contribute more scrapers to that project. I did play around with learning a mapping from raw HTML to the gantt chart but it would have required a much larger context length and probably a larger finetuning set (due to greater variability in the input).
