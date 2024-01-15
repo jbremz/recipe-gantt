@@ -44,6 +44,7 @@ You can find the dataset hosted here: [pocasrocas/recipe-gantt](https://huggingf
 1. Made use of [llama.cpp](https://github.com/ggerganov/llama.cpp) and [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) to compress the finetuned model and run it locally on my macbook at ~30tok/s
 
 You can see the wandb training logs [here](https://wandb.ai/pocasrocas/recipe-gantt/runs/1ostj66y/workspace).
+
 The resulting model is hosted here: [pocasrocas/recipe-gantt-v0.1](https://huggingface.co/pocasrocas/recipe-gantt-v0.1). 
 
 ## Areas for development
