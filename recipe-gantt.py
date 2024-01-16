@@ -4,6 +4,7 @@ from io import StringIO
 import pandas as pd
 import plotly.graph_objects as go
 from fire import Fire
+from huggingface_hub import hf_hub_download
 from llama_cpp import Llama
 from recipe_scrapers import scrape_me
 
@@ -16,6 +17,10 @@ c_format = logging.Formatter("🧑‍🍳 RECIPE GANTT: %(message)s")
 c_handler.setFormatter(c_format)
 logger.addHandler(c_handler)
 logger.propagate = False
+
+MODEL = hf_hub_download(
+    repo_id="pocasrocas/recipe-gantt-v0.1", filename="recipe-gantt-v0.1-q4_0.gguf"
+)
 
 
 INSTRUCTION = """Your task is to transform cooking recipes from raw text into a Gantt chart .tsv file which conveys all the same information but graphically so one can see which ingredients are involved in each step. In the end, we wish to produce a downloadable .tsv file containing a table. It will be structured as follows:
@@ -194,7 +199,7 @@ def plot_gantt(df, figsize=(1000, 1800)):
 def main(
     output_path="recipe-gantt.tsv",
     display=True,
-    model_path="./models/recipe-gantt-v0.1-q4_0.gguf",
+    model_path=MODEL,
 ):
     logger.info("Loading model...")
     llm = Llama(
