@@ -41,7 +41,7 @@ You can find the dataset hosted here: [pocasrocas/recipe-gantt](https://huggingf
 
 ### Finetuning/implementation
 
-1. Used [axolotl](https://github.com/OpenAccess-AI-Collective/axolotl) finetune Mistral-7B-v0.1 on this dataset of a few hundred examples of (recipe input, gantt chart output) pairs. This model wouldn't need the tedious CoT prompting that I had to use with GPT4 and instead could map directly to the output, making it ~4x quicker. I could also host it locally which was better than paying for GPT4 credits ([code](https://github.com/jbremz/recipe-gantt/tree/002-train/notebooks/002-train)).
+1. Used [axolotl](https://github.com/OpenAccess-AI-Collective/axolotl) to do a QLoRA fine-tune of Mistral-7B-v0.1 on this dataset of a few hundred examples of (recipe input, gantt chart output) pairs. This model wouldn't need the tedious CoT prompting that I had to use with GPT4 and instead could map directly to the output, making it ~4x quicker. I could also host it locally which was better than paying for GPT4 credits ([code](https://github.com/jbremz/recipe-gantt/tree/002-train/notebooks/002-train)).
 1. Made use of [llama.cpp](https://github.com/ggerganov/llama.cpp) and [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) to compress the finetuned model and run it locally on my macbook at ~30tok/s
 
 You can see the wandb training logs [here](https://wandb.ai/pocasrocas/recipe-gantt/runs/1ostj66y/workspace).
